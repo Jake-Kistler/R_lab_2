@@ -1550,6 +1550,29 @@ z</code></pre>
 ##  [86]  1.284587352  0.416064030 -0.741967067 -0.907400081  1.036437831
 ##  [91]  1.201870845 -0.038876758 -1.693206896 -1.320982615  1.160512592
 ##  [96] -1.238266108 -0.080235012 -0.824683574  0.457422283 -0.038876758</code></pre>
+<p>finding both the outliners and the potential outliners</p>
+<pre class="r"><code># R allows for c-like loops:https://www.statology.org/how-to-vectorize-in-r-with-example/
+
+# we want to store both types of outliers so vectors for both
+outliers &lt;- c()
+possible_outliers &lt;- c()
+
+for(i in 1:length(z)) # this gets us the length of elements in z this is like the standard for loop header in c but we start at 1 and not 0
+{
+  if(abs(z[i]) &gt; 3) # make the comparison for 100% these are outliners 
+  {
+    outliers &lt;- c(outliers, i) # this is like vect.push_back in cpp we just add data to the vector
+  }
+  else if(abs(z[i]) &gt; 2) # make the check for possible outliners
+  {
+    possible_outliers &lt;- c(possible_outliers, i) # append to the vector these values
+  }
+}</code></pre>
+<p>Now to display both vecs:</p>
+<pre class="r"><code>outliers</code></pre>
+<pre><code>## [1] 5</code></pre>
+<pre class="r"><code>possible_outliers</code></pre>
+<pre><code>## [1]  7  9 62</code></pre>
 </div>
 
 

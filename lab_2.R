@@ -16,3 +16,35 @@ z <- ((mpg - mean(mpg)/ sd(mpg)))
 z
 
 # These z values are the number of standard divs we are alway from the true standard div. And std div is how far we are away from the mean 
+
+# Now to somehow find outliners?
+# this would be easy in a non functional language like cpp and for example just to test my thinking
+# for(int i = 0; i < vec.size(); i++)
+#{
+# if(abs(vec[i]) > 3) def_outliner++;
+# else if (abs(vec[i]) > 2) pot_outliner++;
+#}
+
+# R allows for c-like loops:https://www.statology.org/how-to-vectorize-in-r-with-example/
+
+# we want to store both types of outliers so vectors for both
+outliers <- c()
+possible_outliers <- c()
+
+for(i in 1:length(z)) # this gets us the length of elements in z this is like the standard for loop header in c but we start at 1 and not 0
+{
+  if(abs(z[i]) > 3) # make the comparison for 100% these are outliners 
+  {
+    outliers <- c(outliers, i) # this is like vect.push_back in cpp we just add data to the vector
+  }
+  else if(abs(z[i]) > 2) # make the check for possible outliners
+  {
+    possible_outliers <- c(possible_outliers, i) # append to the vector these values
+  }
+}
+
+# Now to display both vecs
+outliers
+possible_outliers
+
+
