@@ -24,9 +24,18 @@ getwd()
 Save the data file as a CSV, open it and read the first 6 rows from it.
 ````{r}
 # Read the data into a data frame (df) using read.csv()
-df <- read.csv("EPAGAS-1.XLS - Sheet1.csv")
+dat <- read.csv("EPAGAS-1.XLS - Sheet1.csv")
 
 # Use head to display the first 6 rows of data
-head(df,6)
+head(dat,6)
 ````
+
+## Task 3:
+Make the object mpg and populate it with the MPG from the data file
+````{r}
+# make and assign the object data
+mpg = dat$MPG
+mpg
+````
+
 
