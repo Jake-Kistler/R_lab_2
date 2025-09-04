@@ -1,0 +1,22 @@
+---
+title: "Lab_2"
+author: "Jake Austin Kistler"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: yes
+    toc_float: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Tasks
+
+## task 1:
+Get the working directory for this lab:
+````{r}
+getwd()
+````
+
