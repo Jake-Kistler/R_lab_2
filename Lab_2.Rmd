@@ -20,3 +20,13 @@ Get the working directory for this lab:
 getwd()
 ````
 
+## Task 2:
+Save the data file as a CSV, open it and read the first 6 rows from it.
+````{r}
+# Read the data into a data frame (df) using read.csv()
+df <- read.csv("EPAGAS-1.XLS - Sheet1.csv")
+
+# Use head to display the first 6 rows of data
+head(df,6)
+````
+
