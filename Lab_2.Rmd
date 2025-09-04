@@ -37,5 +37,11 @@ Make the object mpg and populate it with the MPG from the data file
 mpg = dat$MPG
 mpg
 ````
+Now to transform mpg into z 
+````{r}
+# this calculation was shown in class and is in the given example code
+z <- (mpg - mean(mpg)) / sd(mpg)
+z
+````
 
 
